@@ -12,6 +12,8 @@ int main() {
             48, 65, 52, 10, 86, 82, 43, 4, 3, 6,
             78, 35, 31, 82, 18, 1, 48, 80, 23, 38
             };
+
+    int arr[12] = {1,4,4,7,7,8,11,19,21,23,24,30};
    
     printf("\n");
     printArray(seq, 50);
@@ -24,6 +26,7 @@ int main() {
     int sumPar = 0;
     int index = 0;
     double sumEven = arraySumEven(seq, 50);
+    int numero;
 
     printf("\nValor a atingir (entre 32 e %.0f): ", sumEven);
     readInteger(&val);
@@ -44,6 +47,10 @@ int main() {
         }
     }
     printf("\nO valor %d é atingido no index %d\n", val, index);
+
+    printf("\nDigite um número de 1-30: ");
+    scanf("%d", &numero);
+    printf("\nNivel 3: O valor %d existe no indice %d\n\n", numero, binarySearch(numero, arr, 1, 30));
 
 
     return EXIT_SUCCESS;

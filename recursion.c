@@ -52,3 +52,23 @@ int arraySumEven(int arr[], int arrLength)
     }
 }
 
+int binarySearch(int val, int arr[], int start, int end)
+{
+    if (start > end)
+    {
+        return -1;
+    }
+    
+    int mid;
+
+    mid = (start+end) / 2;
+
+    if (arr[mid] == val)
+    {    return mid; }
+
+    else if (arr[mid] > val)
+        { return binarySearch(val, arr, start, mid - 1); }
+    else
+       { return binarySearch(val, arr, mid+1, end); }
+}
+
