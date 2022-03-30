@@ -58,7 +58,7 @@ int binarySearch(int val, int arr[], int start, int end)
     {
         return -1;
     }
-    
+
     int mid;
 
     mid = (start+end) / 2;
@@ -72,3 +72,47 @@ int binarySearch(int val, int arr[], int start, int end)
        { return binarySearch(val, arr, mid+1, end); }
 }
 
+
+int quickSort(int arr[], int low, int high)
+{
+    double pi;
+
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[pi] is now
+           at right place */
+        pi = partition(arr, low, high);
+
+        quickSort(arr, low, pi - 1);  // Before pi
+        quickSort(arr, pi + 1, high); // After pi
+    }
+}
+
+int partition (int arr[],  int low, int high)
+{
+    // pivot (Element to be placed at right position)
+   int pivot = arr[high];  
+ 
+    int i = (low - 1); // Index of smaller element and indicates the 
+                   // right position of pivot found so far
+
+    for (int j = low; j <= high- 1; j++)
+    {
+        // If current element is smaller than the pivot
+        if (arr[j] < pivot)
+        {
+            i++;    // increment index of smaller element
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return (i + 1);
+}
+
+void swap(int *a, int *b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
+
+}
