@@ -18,6 +18,33 @@ int main() {
     printf("\n\n");
 
     printf("\nNivel 1\nvalor mínimo: %d\n\n", arrayMinimum(seq, 50));
+    printf("\nNivel 2:\nSoma: %d\n\n", arraySumEven(seq, 50));
+
+    int val;
+    int sumPar = 0;
+    int index = 0;
+    double sumEven = arraySumEven(seq, 50);
+
+    printf("\nValor a atingir (entre 32 e %.0f): ", sumEven);
+    readInteger(&val);
+
+    for (int i = 0; i < 50; i++)
+    {
+        if (sumPar < val)
+        {
+            if (seq[i]%2 == 0)
+            {
+                sumPar += seq[i];
+                index = i;
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+    printf("\nO valor %d é atingido no index %d\n", val, index);
+
 
     return EXIT_SUCCESS;
 }
