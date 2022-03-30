@@ -1,6 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h>
 #include "input.h"
+#include "recursion.h"
 
 int main() {
 
@@ -12,8 +13,11 @@ int main() {
             78, 35, 31, 82, 18, 1, 48, 80, 23, 38
             };
    
-    /* Program code. */
-    printf("I do nothing at this moment.\n");
+    printf("\n");
+    printArray(seq, 50);
+    printf("\n\n");
+
+    printf("\nNivel 1\nvalor mínimo: %d\n\n", arrayMinimum(seq, 50));
 
     return EXIT_SUCCESS;
 }
